@@ -33,7 +33,11 @@ export function CaseStudyCard({ project, index = 0 }: { project: Project; index?
           )}
           style={
             hasImage
-              ? { backgroundImage: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center" }
+              ? {
+                  backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH}${project.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }
               : undefined
           }
         >
