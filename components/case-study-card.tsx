@@ -11,7 +11,13 @@ const tagColor: Record<Tag["color"], string> = {
   amber: "border-amber/25 text-amber",
 };
 
-export function CaseStudyCard({ project, index = 0 }: { project: Project; index?: number }) {
+export function CaseStudyCard({
+  project,
+  index = 0,
+}: {
+  project: Project;
+  index?: number;
+}) {
   const [client, years, category] = project.meta;
   const hasImage = project.image && !project.image.includes("cover.jpg");
 
@@ -20,7 +26,7 @@ export function CaseStudyCard({ project, index = 0 }: { project: Project; index?
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+      transition={{ duration: 1.5, delay: index * 0.08, ease: "easeOut" }}
       className={cn(project.featured && "md:col-span-2")}
     >
       <Link href={project.href} className="group block">
@@ -29,7 +35,7 @@ export function CaseStudyCard({ project, index = 0 }: { project: Project; index?
           className={cn(
             "relative overflow-hidden rounded-[16px] border border-white/8 bg-white/[0.03] noise-overlay",
             "transition-colors duration-200 group-hover:border-accent/35",
-            project.featured ? "aspect-[16/7]" : "aspect-square"
+            project.featured ? "aspect-[16/7]" : "aspect-square",
           )}
           style={
             hasImage
@@ -51,7 +57,9 @@ export function CaseStudyCard({ project, index = 0 }: { project: Project; index?
               <span className="text-2xl font-semibold tracking-tightest text-white/25">
                 {project.title}
               </span>
-              <span className="font-mono text-[11px] text-white/15">{project.image}</span>
+              <span className="font-mono text-[11px] text-white/15">
+                {project.image}
+              </span>
             </div>
           )}
         </div>
@@ -74,7 +82,7 @@ export function CaseStudyCard({ project, index = 0 }: { project: Project; index?
                 key={tag.label}
                 className={cn(
                   "rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.04em]",
-                  tagColor[tag.color]
+                  tagColor[tag.color],
                 )}
               >
                 {tag.label}

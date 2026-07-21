@@ -36,7 +36,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 3.5 }}
           className="mb-6 font-mono text-xl tracking-[0.1em] text-amber md:text-4xl"
         >
           {"// Fitzgerald Timothe"}
@@ -52,8 +52,8 @@ export default function Home() {
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{
-                  duration: 0.7,
-                  delay: 0.15 + i * 0.12,
+                  duration: 1.7,
+                  delay: 0.25 + i * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className={`block font-semibold leading-[0.9] tracking-tightest ${line.color}`}
@@ -68,7 +68,7 @@ export default function Home() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
+          transition={{ duration: 0.7, delay: 1.1 }}
           className="mt-7 max-w-md text-lg font-medium leading-relaxed text-white/65"
         >
           I build brand strategy that borders on{" "}
