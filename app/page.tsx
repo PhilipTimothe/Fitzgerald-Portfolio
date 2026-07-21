@@ -87,7 +87,7 @@ export default function Home() {
             credit="case studies, 20XX–2025"
             className="mb-10"
           />
-          <div className="mx-auto grid w-[40%] grid-cols-1 gap-4">
+          <div className="mx-auto grid w-full grid-cols-1 gap-4 md:w-[40%]">
             {caseStudies.map((project, i) => (
               <CaseStudyCard key={project.id} project={project} index={i} />
             ))}
