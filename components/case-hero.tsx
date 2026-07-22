@@ -16,9 +16,22 @@ interface CaseHeroProps {
   /** Cloudflare Stream video UID. When set, plays as a muted looping background instead of `image`. */
   video?: string;
   titleAccent?: "green" | "cyan";
+  /**
+   * "cover" (default) fills the hero, cropping the image. "contain" keeps
+   * the whole image visible, letterboxed against the page background.
+   */
+  imageFit?: "cover" | "contain";
+  /** Background position on mobile; falls back to centered on md+. Defaults to "center". */
+  mobilePosition?: "center" | "left" | "right";
   /** Rendered as an overlay pinned to the top of the hero, e.g. a BackButton. */
   children?: React.ReactNode;
 }
+
+const mobilePositionClass = {
+  center: "bg-center",
+  left: "bg-left md:bg-center",
+  right: "bg-right md:bg-center",
+};
 
 export function CaseHero({
   eyebrow,
@@ -28,6 +41,8 @@ export function CaseHero({
   image,
   video,
   titleAccent = "green",
+  imageFit = "cover",
+  mobilePosition = "center",
   children,
 }: CaseHeroProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +53,7 @@ export function CaseHero({
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const hasVideo = Boolean(video);
   const hasImage = !hasVideo && image && !image.includes("cover.jpg") && !image.includes("placeholder");
+  const isContain = imageFit === "contain";
 
   return (
     <section
@@ -48,7 +64,9 @@ export function CaseHero({
       <motion.div
         style={{ y, ...(hasImage ? { backgroundImage: `url(${withBasePath(image)})` } : {}) }}
         className={cn(
-          "absolute inset-0 -top-[10%] h-[120%] bg-cover bg-center",
+          "absolute inset-0",
+          mobilePositionClass[mobilePosition],
+          isContain ? "bg-contain bg-no-repeat" : "-top-[10%] h-[120%] bg-cover",
           !hasImage && !hasVideo && "bg-white/[0.03]"
         )}
       >

@@ -12,9 +12,24 @@ interface ImageBreakProps {
   height?: "md" | "lg";
   /** Parallax range in percent, applied both above and below center. Defaults to a modest shift since these blocks are shorter than the hero. */
   intensity?: number;
+  /** Background position on mobile; falls back to centered on md+. Defaults to "center". */
+  mobilePosition?: "center" | "left" | "right";
 }
 
-export function ImageBreak({ image, alt, caption, height = "md", intensity = 12 }: ImageBreakProps) {
+const mobilePositionClass = {
+  center: "bg-center",
+  left: "bg-left md:bg-center",
+  right: "bg-right md:bg-center",
+};
+
+export function ImageBreak({
+  image,
+  alt,
+  caption,
+  height = "md",
+  intensity = 12,
+  mobilePosition = "center",
+}: ImageBreakProps) {
   const hasImage = image && !image.includes("placeholder");
   const ref = useRef<HTMLDivElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -47,7 +62,8 @@ export function ImageBreak({ image, alt, caption, height = "md", intensity = 12 
             ...(hasImage ? { backgroundImage: `url(${withBasePath(image)})` } : {}),
           }}
           className={cn(
-            "absolute inset-x-0 -top-[15%] h-[130%] bg-cover bg-center",
+            "absolute inset-x-0 -top-[15%] h-[130%] bg-cover",
+            mobilePositionClass[mobilePosition],
             !hasImage && "bg-white/[0.03]"
           )}
         />

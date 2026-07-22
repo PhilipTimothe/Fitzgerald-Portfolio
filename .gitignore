@@ -13,5 +13,5 @@ next-env.d.ts
 .DS_Store
 .env*.local
 
-# local tooling
-.claude/
+# local tooling (machine-specific; .claude/skills/ etc. stay tracked)
+.claude/settings.local.json
