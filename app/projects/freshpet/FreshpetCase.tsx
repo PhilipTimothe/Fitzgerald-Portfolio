@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/back-button";
 import { CaseHero } from "@/components/case-hero";
 import { MetricBand, type Metric } from "@/components/metric-band";
 import { FactsBar, type Fact } from "@/components/facts-bar";
@@ -54,6 +55,7 @@ const gallery: GalleryItem[] = [
 export function FreshpetCase() {
   return (
     <main className="min-h-screen">
+      <BackButton />
       <CaseHero
         eyebrow="// Case Study · CPG / Pet"
         title="Freshpet"
