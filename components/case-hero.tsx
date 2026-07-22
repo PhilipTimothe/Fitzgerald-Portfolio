@@ -16,6 +16,8 @@ interface CaseHeroProps {
   /** Cloudflare Stream video UID. When set, plays as a muted looping background instead of `image`. */
   video?: string;
   titleAccent?: "green" | "cyan";
+  /** Rendered as an overlay pinned to the top of the hero, e.g. a BackButton. */
+  children?: React.ReactNode;
 }
 
 export function CaseHero({
@@ -26,6 +28,7 @@ export function CaseHero({
   image,
   video,
   titleAccent = "green",
+  children,
 }: CaseHeroProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -58,6 +61,13 @@ export function CaseHero({
       </motion.div>
       {/* Scrim for legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />
+
+      {children && (
+        <>
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/70 to-transparent" />
+          <div className="absolute inset-x-0 top-0 z-10">{children}</div>
+        </>
+      )}
 
       {!hasImage && !hasVideo && (
         <div className="absolute right-6 top-6 font-mono text-[11px] text-white/20">

@@ -55,7 +55,6 @@ const gallery: GalleryItem[] = [
 export function FreshpetCase() {
   return (
     <main className="min-h-screen">
-      <BackButton />
       <CaseHero
         eyebrow="// Case Study · CPG / Pet"
         title="Freshpet"
@@ -64,7 +63,9 @@ export function FreshpetCase() {
         image="/freshpetheader.jpeg"
         video="38821eaaeb3862180a9e137840d66b3d"
         titleAccent="green"
-      />
+      >
+        <BackButton />
+      </CaseHero>
 
       <MetricBand metrics={metrics} />
       <FactsBar facts={facts} />
