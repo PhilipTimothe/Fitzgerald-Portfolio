@@ -19,9 +19,11 @@ interface VideoBlockProps {
   autoplayStreamId?: string;
   title: string;
   caption?: string;
+  /** Link to the original video (e.g. on YouTube), shown after the caption. */
+  sourceUrl?: string;
 }
 
-export function VideoBlock({ poster, embedUrl, src, autoplayStreamId, title, caption }: VideoBlockProps) {
+export function VideoBlock({ poster, embedUrl, src, autoplayStreamId, title, caption, sourceUrl }: VideoBlockProps) {
   const [playing, setPlaying] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const hasPoster = poster && !poster.includes("placeholder");
@@ -80,6 +82,16 @@ export function VideoBlock({ poster, embedUrl, src, autoplayStreamId, title, cap
             </div>
           </div>
           {caption && <p className="mt-3 text-xs text-white/35">{caption}</p>}
+          {sourceUrl && (
+            <a
+              href={sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-block text-xs font-medium text-accent hover:underline"
+            >
+              Watch the original ↗
+            </a>
+          )}
         </Reveal>
       </Container>
     </section>

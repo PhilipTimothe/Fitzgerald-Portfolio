@@ -138,6 +138,7 @@ export function FreshpetCase() {
         autoplayStreamId="452c7a49ebf4d776fd9dfa007b7d366a"
         title="Freshpet blind taste test"
         caption="The blind taste test: plated like a restaurant dish, eaten by people aged 13 to 60, revealed after as pet food. 1M+ views in week one, 13M+ to date, with a lift in engagement and sales across markets."
+        sourceUrl="https://youtu.be/vhg7Xm4FXAY"
       />
 
       <BeforeAfterSlider
