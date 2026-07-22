@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
 import { CaseStudyCard } from "@/components/case-study-card";
@@ -36,7 +38,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 3.5 }}
+          transition={{ duration: 2.5 }}
           className="mb-6 font-mono text-xl tracking-[0.1em] text-amber md:text-4xl"
         >
           {"// Fitzgerald Timothe"}
@@ -76,6 +78,24 @@ export default function Home() {
           <span className="text-amber">creativity</span>, and{" "}
           <span className="text-cyan">conversion</span>.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.4 }}
+          className="mt-9"
+        >
+          <Link
+            href="/about"
+            className="group inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-6 py-3 text-sm font-semibold text-accent transition-all duration-200 hover:border-accent hover:bg-accent hover:text-ink"
+          >
+            Learn More About Me
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
+        </motion.div>
       </section>
 
       {/* ── Selected work ─────────────────────────────────────── */}

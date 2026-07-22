@@ -23,6 +23,12 @@ export function Footer() {
             Resume
           </a>
           <Link
+            href="/about"
+            className="text-xs font-medium uppercase tracking-[0.04em] text-white/30 transition-colors hover:text-accent"
+          >
+            About
+          </Link>
+          <Link
             href="/contact"
             className="text-xs font-medium uppercase tracking-[0.04em] text-white/30 transition-colors hover:text-accent"
           >
