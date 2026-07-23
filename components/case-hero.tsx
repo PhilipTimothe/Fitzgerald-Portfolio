@@ -15,7 +15,7 @@ interface CaseHeroProps {
   image: string;
   /** Cloudflare Stream video UID. When set, plays as a muted looping background instead of `image`. */
   video?: string;
-  titleAccent?: "green" | "cyan";
+  titleAccent?: "green" | "cyan" | "amber";
   /**
    * "cover" (default) fills the hero, cropping the image. "contain" keeps
    * the whole image visible, letterboxed against the page background.
@@ -31,6 +31,12 @@ const mobilePositionClass = {
   center: "bg-center",
   left: "bg-left md:bg-center",
   right: "bg-right md:bg-center",
+};
+
+const titleAccentClass = {
+  green: "text-accent",
+  cyan: "text-cyan",
+  amber: "text-amber",
 };
 
 export function CaseHero({
@@ -111,7 +117,7 @@ export function CaseHero({
             className="font-semibold uppercase leading-[0.9] tracking-tightest"
             style={{ fontSize: "clamp(48px, 9vw, 108px)" }}
           >
-            <span className={titleAccent === "green" ? "text-accent" : "text-cyan"}>
+            <span className={titleAccentClass[titleAccent]}>
               {title}
             </span>
           </motion.h1>
