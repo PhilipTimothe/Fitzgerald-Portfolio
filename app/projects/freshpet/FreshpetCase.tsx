@@ -143,8 +143,8 @@ export function FreshpetCase() {
       />
 
       <BeforeAfterSlider
-        before="/FreshpetBefore.jpg"
-        after="/freshpetafter.jpg"
+        before="/freshpetafter.jpg"
+        after="/FreshpetBefore.jpg"
         beforeAlt="Freshpet packaging before the rebrand"
         afterAlt="Freshpet Vital PURE and Stews packaging after the rebrand"
         caption="Packaging rebrand across new and existing SKUs. The Stews line went on to win a 2018 American Package Design Award."

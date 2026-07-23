@@ -63,25 +63,25 @@ export const caseStudies: Project[] = [
       { label: "Email", color: "green" },
     ],
   },
-  {
-    id: "my-florida-roofing",
-    title: "My Florida Roofing",
-    subtitle: "Built to Be Found",
-    image: "/myfloridaroofing.jpg", // TODO: add cover image
-    href: "/projects/my-florida-roofing",
-    meta: [
-      "My Florida Roofing Contractor",
-      "2023 – 2024",
-      "Demand Gen · Home Services",
-    ],
-    description:
-      "I owned demand generation for My Florida Roofing Contractor across technical SEO, email, direct mail, and print. Measured SEO lift and a consistent brand system turned a regional contractor into a category leader in its market.",
-    tags: [
-      { label: "SEO", color: "green" },
-      { label: "Demand Gen", color: "cyan" },
-      { label: "Print", color: "green" },
-    ],
-  },
+  // {
+  //   id: "my-florida-roofing",
+  //   title: "My Florida Roofing",
+  //   subtitle: "Built to Be Found",
+  //   image: "/myfloridaroofing.jpg", // TODO: add cover image
+  //   href: "/projects/my-florida-roofing",
+  //   meta: [
+  //     "My Florida Roofing Contractor",
+  //     "2023 – 2024",
+  //     "Demand Gen · Home Services",
+  //   ],
+  //   description:
+  //     "I owned demand generation for My Florida Roofing Contractor across technical SEO, email, direct mail, and print. Measured SEO lift and a consistent brand system turned a regional contractor into a category leader in its market.",
+  //   tags: [
+  //     { label: "SEO", color: "green" },
+  //     { label: "Demand Gen", color: "cyan" },
+  //     { label: "Print", color: "green" },
+  //   ],
+  // },
   {
     id: "camel-passport",
     title: "Camel",
